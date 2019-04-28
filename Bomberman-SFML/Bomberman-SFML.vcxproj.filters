@@ -20,4 +20,32 @@
       <UniqueIdentifier>{73d83700-0678-4766-ba7e-768828dae19a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inlcudes\Core\Actor.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Inlcudes\Core\EngineCore.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Inlcudes\Core\Game.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Inlcudes\Core\Level.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Inlcudes\Math\Definitions.h">
+      <Filter>Includes\Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Inlcudes\Core\Level.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Inlcudes\Core\Game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

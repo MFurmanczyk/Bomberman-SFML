@@ -117,6 +117,18 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inlcudes\Core\Actor.h" />
+    <ClInclude Include="Inlcudes\Core\EngineCore.h" />
+    <ClInclude Include="Inlcudes\Core\Game.h" />
+    <ClInclude Include="Inlcudes\Core\Level.h" />
+    <ClInclude Include="Inlcudes\Math\Definitions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Inlcudes\Core\Game.cpp" />
+    <ClCompile Include="Inlcudes\Core\Level.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\sfml_graphics.redist.2.5.1\build\native\sfml_graphics.redist.targets" Condition="Exists('..\packages\sfml_graphics.redist.2.5.1\build\native\sfml_graphics.redist.targets')" />
