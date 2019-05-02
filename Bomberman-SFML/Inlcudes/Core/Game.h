@@ -2,6 +2,7 @@
 #include <iostream>
 #include "EngineCore.h"
 #include "Level.h"
+#include "Player.h"
 
 //Singleton pattern Game class
 class GGame final

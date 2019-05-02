@@ -19,10 +19,10 @@ bool GLevel::RemoveActor(AActor* Actor)
 {
 	if (Actor)
 	{
-		auto actorIt = std::find(Actors.begin(), Actors.end(), Actor);
-		if (actorIt != Actors.end())
+		auto ActorIt = std::find(Actors.begin(), Actors.end(), Actor);
+		if (ActorIt != Actors.end())
 		{
-			Actors.erase(actorIt);
+			Actors.erase(ActorIt);
 			return true;
 		}
 	}

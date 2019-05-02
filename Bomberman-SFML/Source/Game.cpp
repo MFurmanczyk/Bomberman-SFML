@@ -24,9 +24,10 @@ void GGame::Run()
 	CurrentState = State::Running;
 	sf::Clock Clock;
 	float DeltaTime = 1 / 60.f; //Frame duration
+	auto bman = new APlayer();
 	while (CurrentState != State::Ended)
 	{
-		float FrameStart = Clock.getElapsedTime().asSeconds(); //Frame start time
+		float FrameStart = Clock.getElapsedTime().asSeconds(); //Frame start time... why?
 		sf::Event event;
 		while (Window.pollEvent(event))
 		{
@@ -39,7 +40,7 @@ void GGame::Run()
 		Level->Update(DeltaTime);
 		Level->Draw();
 		Window.display();
-		DeltaTime = Clock.getElapsedTime().asSeconds() - FrameStart;
+		DeltaTime = Clock.getElapsedTime().asSeconds() - FrameStart; //Why this?
 	}
 	return; 
 }

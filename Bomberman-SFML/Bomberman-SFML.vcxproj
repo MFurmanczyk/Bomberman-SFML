@@ -122,12 +122,17 @@
     <ClInclude Include="Inlcudes\Core\EngineCore.h" />
     <ClInclude Include="Inlcudes\Core\Game.h" />
     <ClInclude Include="Inlcudes\Core\Level.h" />
+    <ClInclude Include="Inlcudes\Core\Pawn.h" />
+    <ClInclude Include="Inlcudes\Core\Player.h" />
     <ClInclude Include="Inlcudes\Math\Definitions.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Inlcudes\Core\Actor.cpp" />
     <ClCompile Include="Inlcudes\Core\Game.cpp" />
     <ClCompile Include="Inlcudes\Core\Level.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Pawn.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
