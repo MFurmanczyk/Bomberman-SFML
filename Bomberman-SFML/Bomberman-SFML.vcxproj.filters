@@ -21,45 +21,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Inlcudes\Core\Actor.h">
+    <ClInclude Include="Actor.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Inlcudes\Core\EngineCore.h">
+    <ClInclude Include="EngineCore.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Inlcudes\Core\Game.h">
+    <ClInclude Include="Game.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Inlcudes\Core\Level.h">
+    <ClInclude Include="Level.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Inlcudes\Math\Definitions.h">
+    <ClInclude Include="Pawn.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions.h">
       <Filter>Includes\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Inlcudes\Core\Pawn.h">
-      <Filter>Includes\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Inlcudes\Core\Player.h">
+    <ClInclude Include="Player.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Inlcudes\Core\Level.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Inlcudes\Core\Game.cpp">
+    <ClCompile Include="Level.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Inlcudes\Core\Actor.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Main.cpp">
+    <ClCompile Include="Pawn.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Pawn.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

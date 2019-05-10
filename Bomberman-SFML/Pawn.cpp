@@ -1,4 +1,4 @@
-#include "../Inlcudes/Core/Pawn.h"
+#include "Pawn.h"
 
 APawn::APawn(APawnController* _Controller)
 {
@@ -6,14 +6,15 @@ APawn::APawn(APawnController* _Controller)
 	{
 		this->Controller = _Controller;
 	}
+	Controller->Possess(this);
 }
 
 APawn::~APawn()
 {
-
+	delete Controller;
 }
 
-void APawn::Update(const float DeltaTime)
+void APawn::Update(const float & DeltaTime)
 {
 	if (Controller)
 	{
@@ -30,6 +31,14 @@ void APawn::SetNewController(APawnController * _Controller)
 			delete this->Controller;
 			this->Controller = _Controller;
 		}
+	}
+}
+
+APawnController::~APawnController()
+{
+	if (Pawn)
+	{
+		delete Pawn;
 	}
 }
 

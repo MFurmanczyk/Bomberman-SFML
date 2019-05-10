@@ -1,8 +1,17 @@
 #pragma once
+
 #include <iostream>
 #include "EngineCore.h"
 #include "Level.h"
 #include "Player.h"
+
+enum class State
+{
+	Initializing,
+	Running,
+	Paused,
+	Ended
+};
 
 //Singleton pattern Game class
 class GGame final
@@ -19,14 +28,8 @@ public:
 private:
 	GGame();
 public:
-	enum class State
-	{
-		Initializing,
-		Running,
-		Paused,
-		Ended
-	};
 	void Run(); //Runs main game's code
+	inline void SetState(State _pState) { CurrentState = _pState; }
 	inline State GetState() const { return this->CurrentState; }
 	inline sf::RenderWindow& GetWindow() { return this->Window; }
 
@@ -36,3 +39,5 @@ private:
 	sf::RenderWindow Window;			// Application's window.
 	std::unique_ptr<GLevel> Level;		// Current level
 };
+
+void Quit(sf::Event &event);
