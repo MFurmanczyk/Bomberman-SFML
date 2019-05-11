@@ -4,7 +4,7 @@
 class AActor
 {
 public:
-	AActor() {};
+	inline AActor() = default;
 	virtual ~AActor() = default;
 
 	virtual void Draw() = 0;

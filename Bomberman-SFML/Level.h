@@ -15,7 +15,7 @@ public:
 
 	bool AddActor(AActor* Actor); //Returns true if actor was added successfully
 	bool RemoveActor(AActor* Actor); //Returns true if actor was removed successfully
-
+	bool ActorExists(AActor* Actor); //Returns true if actor exists
 	void Clear(); //Cleanup the level but don't destroy level object
 
 	void Update(const float& DeltaTime); //Updates all actors in the level

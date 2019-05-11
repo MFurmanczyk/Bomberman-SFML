@@ -42,6 +42,12 @@
     <ClInclude Include="Player.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Dynamite.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -57,6 +63,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamite.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

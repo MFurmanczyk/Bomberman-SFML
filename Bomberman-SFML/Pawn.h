@@ -18,7 +18,7 @@ public:
 	void SetNewController(APawnController* _Controller);
 
 protected:
-	APawnController* Controller;
+	APawnController* Controller = nullptr;
 
 	float Velocity = 200.f;
 };
@@ -36,5 +36,5 @@ public:
 	bool Possess(APawn* _Pawn);
 
 protected:
-	APawn* Pawn;
+	APawn* Pawn = nullptr;
 };

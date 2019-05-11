@@ -2,7 +2,7 @@
 
 GGame::GGame() :
 	Window(sf::VideoMode(800u, 600u, 32u), "Bomberman"),
-	CurrentState(State::Initializing),
+	CurrentState(EState::Initializing),
 	Level(new GLevel),
 	FrameLimit(60u)
 {
@@ -21,12 +21,11 @@ GGame::~GGame()
 
 void GGame::Run()
 {
-	CurrentState = State::Running;
+	CurrentState = EState::Running;
 	sf::Clock Clock;
 	auto bman = new APlayer(); //TODO
-	Level->AddActor(bman);
 	float DeltaTime = 1 / 60.f; //Frame duration
-	while (CurrentState != State::Ended)
+	while (CurrentState != EState::Ended)
 	{
 		float FrameStart = Clock.getElapsedTime().asSeconds(); //Frame start time... why?
 		sf::Event event;
@@ -47,7 +46,7 @@ void Quit(sf::Event &event)
 	{
 		if (event.type == sf::Event::Closed)
 		{
-			Game.SetState(State::Ended);
+			Game.SetState(EState::Ended);
 		}
 	}
 }

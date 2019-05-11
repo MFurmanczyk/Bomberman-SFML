@@ -29,6 +29,22 @@ bool GLevel::RemoveActor(AActor* Actor)
 	return false;
 }
 
+bool GLevel::ActorExists(AActor * Actor)
+{
+	if (Actor)
+	{
+		auto ActorIt = std::find(Actors.begin(), Actors.end(), Actor);
+		if (ActorIt != Actors.end())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
 void GLevel::Clear()
 {
 	for (auto Actor : Actors)

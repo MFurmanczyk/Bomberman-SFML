@@ -5,7 +5,7 @@
 #include "Level.h"
 #include "Player.h"
 
-enum class State
+enum class EState
 {
 	Initializing,
 	Running,
@@ -29,15 +29,16 @@ private:
 	GGame();
 public:
 	void Run(); //Runs main game's code
-	inline void SetState(State _pState) { CurrentState = _pState; }
-	inline State GetState() const { return this->CurrentState; }
+	inline void SetState(EState _pState) { CurrentState = _pState; }
+	inline EState GetState() const { return this->CurrentState; }
+	inline std::shared_ptr<GLevel> GetLevel() { return this->Level; }
 	inline sf::RenderWindow& GetWindow() { return this->Window; }
 
 private:
 	unsigned FrameLimit;
-	State CurrentState;	
+	EState CurrentState;	
 	sf::RenderWindow Window;			// Application's window.
-	std::unique_ptr<GLevel> Level;		// Current level
+	std::shared_ptr<GLevel> Level;		// Current level
 };
 
 void Quit(sf::Event &event);

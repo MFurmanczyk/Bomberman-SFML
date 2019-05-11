@@ -120,13 +120,16 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Definitions.h" />
+    <ClInclude Include="Dynamite.h" />
     <ClInclude Include="EngineCore.h" />
+    <ClInclude Include="Explosion.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Dynamite.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
