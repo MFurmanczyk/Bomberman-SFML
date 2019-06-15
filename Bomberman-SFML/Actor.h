@@ -13,6 +13,7 @@ public:
 	inline virtual void SetLocation(const sf::Vector2f &_Location) { this->Sprite.setPosition(_Location); };
 	inline virtual void SetLocation(const float _X, const float _Y) { this->Sprite.setPosition(_X, _Y); };
 	inline virtual sf::Vector2f GetLocation() const { return this->Sprite.getPosition(); };
+	//inline virtual sf::Sprite GetSprite() const { return this->Sprite; };
 
 protected:
 	sf::Sprite Sprite;

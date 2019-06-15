@@ -4,6 +4,7 @@
 #include "EngineCore.h"
 #include "Level.h"
 #include "Player.h"
+#include "TextureManager.h"
 
 enum class EState
 {
@@ -41,4 +42,4 @@ private:
 	std::shared_ptr<GLevel> Level;		// Current level
 };
 
-void Quit(sf::Event &event);
+void Quit(sf::Event &Event);

@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Includes">
       <UniqueIdentifier>{97f8e187-b4d5-45e8-870f-f9855e2f1839}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     <ClInclude Include="Explosion.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -68,5 +68,11 @@
     <ClCompile Include="Dynamite.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

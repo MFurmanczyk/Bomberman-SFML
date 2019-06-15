@@ -11,7 +11,10 @@ APawn::APawn(APawnController* _Controller)
 
 APawn::~APawn()
 {
-	delete Controller;
+	if (Controller)
+	{
+		delete Controller;
+	}
 }
 
 void APawn::Update(const float & DeltaTime)
@@ -31,14 +34,6 @@ void APawn::SetNewController(APawnController * _Controller)
 			delete this->Controller;
 			this->Controller = _Controller;
 		}
-	}
-}
-
-APawnController::~APawnController()
-{
-	if (Pawn)
-	{
-		delete Pawn;
 	}
 }
 

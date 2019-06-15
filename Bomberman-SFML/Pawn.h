@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include "Actor.h"
 
 
@@ -27,7 +27,7 @@ class APawnController
 {
 public:
 	APawnController() = default;
-	virtual ~APawnController();
+	virtual ~APawnController() = default;
 
 	inline bool IsPossessed() const { return Pawn != nullptr; };
 
