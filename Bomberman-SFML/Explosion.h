@@ -1,12 +1,28 @@
 #pragma once
-#include "Actor.h"
-#include <vector>
+#include "Pawn.h"
+#include "TextureManager.h"
+#include "Game.h"
 
-class AExplosion final : public AActor
+class AExplosion final : public APawn
 {
 public:
 	AExplosion();
-	virtual ~AExplosion();
-private: 
-	std::vector<sf::Sprite> Sprite;
+	virtual ~AExplosion() = default;
+
+	virtual void Update(const float& DeltaTime) override;
+	virtual void Draw() override;
+
+};
+
+
+class AExplosionController : public APawnController
+{
+public:
+	AExplosionController() = default;
+	~AExplosionController() = default;
+
+	virtual void Update(const float& DeltaTime) override;
+
+private:
+	float Duration = 2.f;
 };

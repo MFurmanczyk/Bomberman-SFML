@@ -1,27 +1,29 @@
 #include "Dynamite.h"
 
-ADynamite::ADynamite()
-{
-	Texture.loadFromFile("C:\\Users\\macie\\source\\repos\\Bomberman-SFML\\Bomberman-SFML\\Bomberman\\Bomb\\Bomb_f01.png");
-	Sprite.setTexture(Texture);
+ADynamite::ADynamite() : APawn(new ADynamiteController)
+{	
+	Sprite.setTexture(*(TTextureManager::Get("Bomb")));
 	GGame::Instantiate().GetLevel()->AddActor(this);
 }
 
 void ADynamite::Update(const float & DeltaTime)
 {
-	this->Explode(DeltaTime);
+	Controller->Update(DeltaTime);
 }
 
 void ADynamite::Draw()
 {
-	GGame::Instantiate().GetWindow().draw(Sprite);
+	GGame::Instantiate().GetWindow().draw(this->Sprite);
 }
 
-void ADynamite::Explode(const float & DeltaTime)
+void ADynamiteController::Update(const float & DeltaTime)
 {
-	ExplodeTime += DeltaTime;
-	if (ExplodeTime > 2.f)
+	ExplosionTime -= DeltaTime;
+	if (ExplosionTime < 0.f)
 	{
-		GGame::Instantiate().GetLevel()->RemoveActor(this);
+		sf::Vector2f Location = Pawn->GetLocation();
+		GGame::Instantiate().GetLevel()->RemoveActor(Pawn);
+		auto Explosion = new AExplosion();
+		Explosion->SetLocation(Location);
 	}
 }

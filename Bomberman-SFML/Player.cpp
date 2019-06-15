@@ -14,37 +14,46 @@ void APlayerController::Update(const float & DeltaTime)
 
 void APlayerController::Move()
 {
+
+	auto Owner = dynamic_cast<APlayer*> (Pawn);
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		Pawn->SetLocation(Pawn->GetLocation().x - Velocity, Pawn->GetLocation().y);
+		Owner->SetDirection(EDirection::ELeft);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		Pawn->SetLocation(Pawn->GetLocation().x + Velocity, Pawn->GetLocation().y);
+		Owner->SetDirection(EDirection::ERight);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		Pawn->SetLocation(Pawn->GetLocation().x, Pawn->GetLocation().y + Velocity);
-		
+		Owner->SetDirection(EDirection::EDown);
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		Pawn->SetLocation(Pawn->GetLocation().x, Pawn->GetLocation().y - Velocity);
+		Owner->SetDirection(EDirection::EUp);
 	}
 }
 
 void APlayerController::Plant()
 {
+	unsigned BombDisplacement = 8u; //Variable to centre the bomb on a tile
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
 		if (!Dynamite)
 		{
 			Dynamite = new ADynamite();
+			
 		}
 	}
 	if (Dynamite and !Setter)
 	{
-		Dynamite->SetLocation(this->Pawn->GetLocation());
+		Dynamite->SetLocation((int(this->Pawn->GetLocation().x / 64) * 64) + BombDisplacement,
+							  (int(this->Pawn->GetLocation().y / 64) * 64) + BombDisplacement); // 64x64 - size of a tile
 		Setter = true;
 	}
 }
@@ -64,21 +73,21 @@ void APlayer::Draw()
 void APlayer::Update(const float & DeltaTime)
 {
 	APawn::Update(DeltaTime);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	if (GetDirection() == EDirection::ELeft)
 	{
 		Sprite.setTexture(*(TTextureManager::Get("BombermanSide")));
 		Sprite.setScale(-1, 1);
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	else if (GetDirection() == EDirection::ERight)
 	{
 		Sprite.setTexture(*(TTextureManager::Get("BombermanSide")));
 		Sprite.setScale(1, 1);
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	else if (GetDirection() == EDirection::EDown)
 	{
 		Sprite.setTexture(*(TTextureManager::Get("BombermanFront")));
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	else if (GetDirection() == EDirection::EUp)
 	{
 		Sprite.setTexture(*(TTextureManager::Get("BombermanBack")));
 	}

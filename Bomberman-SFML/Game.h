@@ -5,7 +5,7 @@
 #include "Level.h"
 #include "Player.h"
 #include "TextureManager.h"
-
+#include "Tile.h"
 enum class EState
 {
 	Initializing,
@@ -28,6 +28,7 @@ public:
 	}
 private:
 	GGame();
+	void Initialize();
 public:
 	void Run(); //Runs main game's code
 	inline void SetState(EState _pState) { CurrentState = _pState; }

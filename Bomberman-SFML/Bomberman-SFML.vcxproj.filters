@@ -48,6 +48,9 @@
     <ClInclude Include="TextureManager.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -69,6 +72,12 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="TextureManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,7 +2,16 @@
 #include "Pawn.h"
 #include "Game.h"
 #include "Dynamite.h"
+#include "Explosion.h"
 #include "TextureManager.h"
+
+enum class EDirection
+{
+	EUp,
+	EDown,
+	ERight,
+	ELeft
+};
 
 class APlayerController : public APawnController
 {
@@ -16,6 +25,7 @@ private:
 
 private:
 	AActor* Dynamite = nullptr;
+	AActor* Explsion[3][3] = { nullptr };
 	bool Setter = false;
 	float Velocity = 2.5f;
 };
@@ -26,6 +36,10 @@ public:
 	APlayer();
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override;
+	inline virtual EDirection GetDirection() const { return this->Direction; };
+	inline virtual void SetDirection(EDirection _Direction) { this->Direction = _Direction; };
+private:
+	EDirection Direction;
 };
 
 
