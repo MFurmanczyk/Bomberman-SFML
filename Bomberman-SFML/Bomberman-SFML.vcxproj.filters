@@ -83,5 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TODO.txt">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

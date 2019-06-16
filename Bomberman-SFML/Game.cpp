@@ -67,6 +67,7 @@ void GGame::Initialize()
 					auto Tile = new ASolidTile();
 					Tile->SetLocation(XModifier * 64, YModifier * 64);
 					Level->AddActor(Tile);
+					dynamic_cast<ASolidTile*>(Tile)->SetCollider(Tile->GetLocation());
 				}
 				else if (TileType == '2')
 				{
@@ -76,6 +77,7 @@ void GGame::Initialize()
 					BackgroundTile->SetLocation(XModifier * 64, YModifier * 64);
 					Level->AddActor(BackgroundTile);
 					Level->AddActor(Tile);
+					dynamic_cast<AExplodableTile*>(Tile)->SetCollider(Tile->GetLocation());
 
 				}
 				else

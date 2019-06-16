@@ -1,4 +1,5 @@
 #include "Level.h"
+#include "Tile.h"
 
 GLevel::~GLevel()
 {
@@ -53,6 +54,32 @@ void GLevel::Clear()
 		delete Actor;
 	}
 	return;
+}
+
+std::vector<AActor*> GLevel::GetCollidableTiles() const
+{
+	std::vector<AActor*> Tiles;
+	for (auto Actor : Actors)
+	{
+		if (dynamic_cast<AExplodableTile*> (Actor) or dynamic_cast<ASolidTile*> (Actor))
+		{
+			Tiles.push_back(Actor);
+		}
+	}
+	return Tiles;
+}
+
+std::vector<AActor*> GLevel::GetExplodableTiles() const
+{
+	std::vector<AActor*> Tiles;
+	for (auto Actor : Actors)
+	{
+		if (dynamic_cast<AExplodableTile*> (Actor))
+		{
+			Tiles.push_back(Actor);
+		}
+	}
+	return Tiles;
 }
 
 void GLevel::Update(const float & DeltaTime)
