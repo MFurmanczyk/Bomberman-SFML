@@ -12,6 +12,11 @@ public:
 	virtual void Update(const float& DeltaTime) override;
 	virtual void Draw() override;
 
+	inline sf::FloatRect GetCollider() const { return this->Collider; }
+
+	bool DestroyTile();
+private:
+	sf::FloatRect Collider;
 };
 
 
@@ -23,6 +28,8 @@ public:
 
 	virtual void Update(const float& DeltaTime) override;
 
+
 private:
 	float Duration = 2.f;
+
 };

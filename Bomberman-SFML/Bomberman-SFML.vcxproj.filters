@@ -36,9 +36,6 @@
     <ClInclude Include="Definitions.h">
       <Filter>Includes\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Includes\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Dynamite.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
@@ -49,6 +46,15 @@
       <Filter>Includes\Core</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Speedup.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstPlayer.h">
+      <Filter>Includes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SecondPlayer.h">
       <Filter>Includes\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,9 +71,6 @@
     <ClCompile Include="Pawn.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="Dynamite.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -78,6 +81,15 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Explosion.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Speedup.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FirstPlayer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SecondPlayer.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

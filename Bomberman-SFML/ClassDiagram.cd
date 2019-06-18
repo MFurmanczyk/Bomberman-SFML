@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AActor" Collapsed="true">
-    <Position X="5.75" Y="0.5" Width="2.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAACAAAAAgAAAAAAAEAAAAIAAAAwAAAAAAAAAAA=</HashCode>
       <FileName>Actor.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ADynamite" Collapsed="true">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Dynamite.h</FileName>
@@ -22,9 +22,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AExplosion" Collapsed="true">
-    <Position X="5.25" Y="3.25" Width="1.5" />
+    <Position X="12" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAQAAAgAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAQAAAgAAAAAAQAAAAAAAgAAQAAAAAAAAAAA=</HashCode>
       <FileName>Explosion.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -36,21 +36,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GGame" Collapsed="true">
-    <Position X="14.5" Y="0.5" Width="1.5" />
+    <Position X="16.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABEAAAAAAAQAAAAQACCABAAAAQAABAAAkCACAAAI=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GLevel" Collapsed="true">
-    <Position X="16.25" Y="0.5" Width="1.5" />
+    <Position X="18.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAQBBAAAAAAAggAAAASAAAAABAAAAAgAAAAAAABAAAA=</HashCode>
+      <HashCode>gAQBBAAAAAAAggAAAASAAAAABAIAAAgAAAAAAABAAAA=</HashCode>
       <FileName>Level.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APawn" Collapsed="true">
-    <Position X="6.25" Y="1.75" Width="1.5" />
+    <Position X="6.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQABIAAAQAACgAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Pawn.h</FileName>
@@ -64,70 +64,77 @@
     </TypeIdentifier>
   </Class>
   <Class Name="APlayerController" Collapsed="true">
-    <Position X="2.75" Y="7.75" Width="1.5" />
+    <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQQAAAAAIAAAAAAAAAAIAAQAAEAAAAAAAAACAAEAAA=</HashCode>
+      <HashCode>AAUQAAAAAIAAAAAAAAAAIAAQAAEAAAAIQAAACAAEAAA=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APlayer" Collapsed="true">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="9.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACQAAAAAAIAIAgAAACAAAAAQAAAAAAAQAACAAAAAAAA=</HashCode>
+      <HashCode>ACQAAAEAAAAIAgAAACAAAAAQAAAAAAAQAACAAAIAAAA=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ASpeedUp" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAACAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Speedup.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="TTextureManager" Collapsed="true">
-    <Position X="14.5" Y="1.5" Width="1.5" />
+    <Position X="16.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAhACAAAAAAABAABQAAAAAAAAAAAAAAAAgAEEAAAA=</HashCode>
       <FileName>TextureManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ATile" Collapsed="true">
-    <Position X="9.75" Y="3.25" Width="1.5" />
+    <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAEAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAEAAAAgCAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ATileController" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="2.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AGroundTile" Collapsed="true">
-    <Position X="7.5" Y="4.75" Width="1.5" />
+    <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgQAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ASolidTile" Collapsed="true">
-    <Position X="9.75" Y="4.75" Width="1.5" />
+    <Position X="3" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAIAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAIEAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AExplodableTile" Collapsed="true">
-    <Position X="12" Y="4.75" Width="1.5" />
+    <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAgAA=</HashCode>
+      <HashCode>AAQAAAEAAAEAAAAAAAAAAAAQAAAAAAAQAAAAAAAAgAA=</HashCode>
       <FileName>Tile.h</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="EState" Collapsed="true">
-    <Position X="16.25" Y="2.75" Width="1.5" />
+    <Position X="18.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAQAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Game.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="EDirection" Collapsed="true">
-    <Position X="14.5" Y="2.75" Width="1.5" />
+    <Position X="16.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAABAAAAAAAAQAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Player.h</FileName>

@@ -3,7 +3,8 @@
 #include "Level.h"
 #include <iostream>
 #include "EngineCore.h"
-#include "Player.h"
+#include "SecondPlayer.h"
+#include "FirstPlayer.h"
 #include "TextureManager.h"
 #include "Tile.h"
 enum class EState
@@ -37,6 +38,7 @@ public:
 	inline sf::RenderWindow& GetWindow() { return this->Window; }
 
 private:
+	unsigned ScreenSize = 960u;
 	unsigned FrameLimit;
 	EState CurrentState;	
 	sf::RenderWindow Window;			// Application's window.

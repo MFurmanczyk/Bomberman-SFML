@@ -23,7 +23,15 @@ void ADynamiteController::Update(const float & DeltaTime)
 	{
 		sf::Vector2f Location = Pawn->GetLocation();
 		GGame::Instantiate().GetLevel()->RemoveActor(Pawn);
-		auto Explosion = new AExplosion();
-		Explosion->SetLocation(Location);
+		auto Explosion1 = new AExplosion();
+		Explosion1->SetLocation(Location.x, Location.y - 64);
+		auto Explosion2 = new AExplosion();
+		Explosion2->SetLocation(Location.x - 64, Location.y);
+		auto Explosion3 = new AExplosion();
+		Explosion3->SetLocation(Location);
+		auto Explosion4 = new AExplosion();
+		Explosion4->SetLocation(Location.x + 64, Location.y);
+		auto Explosion5 = new AExplosion();
+		Explosion5->SetLocation(Location.x, Location.y + 64);
 	}
 }

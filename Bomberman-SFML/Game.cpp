@@ -1,7 +1,7 @@
 #include "Game.h"
 
 GGame::GGame() :
-	Window(sf::VideoMode(960u, 960u), "Bomberman"),
+	Window(sf::VideoMode(ScreenSize, ScreenSize), "Bomberman"),
 	CurrentState(EState::Initializing),
 	Level(new GLevel),
 	FrameLimit(60u)
@@ -28,30 +28,62 @@ void GGame::Run()
 	while (CurrentState != EState::Ended)
 	{
 		float FrameStart = Clock.getElapsedTime().asSeconds();
-		sf::Event Event;
-		Quit(Event);
-		Window.clear();
-		Level->Update(DeltaTime);
-		Level->Draw();
+		if (!Level->PlayersAlive())
+		{
+			sf::Event Event;
+			Quit(Event);
+			sf::Font Font;
+			if (!Font.loadFromFile("arial.ttf"))
+			{
+				std::cout << "Wrong path." << std::endl;
+			}
+			sf::Text Text;
+			Text.setFont(Font);
+			Text.setString("Game Over");
+			Text.setFillColor(sf::Color::Red);
+			Text.setCharacterSize(40);
+
+			sf::FloatRect TextRect = Text.getLocalBounds();
+			Text.setOrigin(TextRect.width / 2, TextRect.height / 2);
+			Text.setPosition(sf::Vector2f(ScreenSize * .5f, ScreenSize * .5f));
+			GetWindow().clear();
+			GetWindow().draw(Text);
+		}
+		else
+		{
+			sf::Event Event;
+			Quit(Event);
+			GetWindow().clear();
+			Level->Update(DeltaTime);
+			Level->Draw();
+		}
 		Window.display();
-		DeltaTime = Clock.getElapsedTime().asSeconds() - FrameStart; //Why this? Why this? Oh doughter of the sea? XD
+		DeltaTime = Clock.getElapsedTime().asSeconds() - FrameStart;
 	}
 	return; 
 }
 
+
 void GGame::Initialize()
 {
+	try
+	{
+		TTextureManager::Load("BombermanFront", "Sprites/Bomberman/Front/Bman_F_f00.png");
+		TTextureManager::Load("BombermanSide", "Sprites/Bomberman/Side/Bman_F_f00.png");
+		TTextureManager::Load("BombermanBack", "Sprites/Bomberman/Back/Bman_B_f00.png");
+		TTextureManager::Load("TileGround", "Sprites/Blocks/BackgroundTile.png");
+		TTextureManager::Load("TileSolid", "Sprites/Blocks/SolidBlock.png");
+		TTextureManager::Load("TileExplodable", "Sprites/Blocks/ExplodableBlock.png");
+		TTextureManager::Load("Bomb", "Sprites/Bomb/Bomb_f02.png");
+		TTextureManager::Load("Explosion", "Sprites/Flame/Flame_f00.png");
+		TTextureManager::Load("Speedup", "Sprites/Powerups/SpeedPowerup.png");
+	}
+	catch (const std::invalid_argument& _Argument)
+	{
+		std::cout << "Invalid argument: " << _Argument.what() << std::endl;
+	}
 	std::ifstream File;
 	File.open("Map.txt", std::ios::in);
-	TTextureManager::Load("BombermanFront", "Sprites/Bomberman/Front/Bman_F_f00.png");
-	TTextureManager::Load("BombermanSide", "Sprites/Bomberman/Side/Bman_F_f00.png");
-	TTextureManager::Load("BombermanBack", "Sprites/Bomberman/Back/Bman_B_f00.png");
-	TTextureManager::Load("TileGround", "Sprites/Blocks/BackgroundTile.png");
-	TTextureManager::Load("TileSolid", "Sprites/Blocks/SolidBlock.png");
-	TTextureManager::Load("TileExplodable", "Sprites/Blocks/ExplodableBlock.png");
-	TTextureManager::Load("Bomb", "Sprites/Bomb/Bomb_f02.png");
-	TTextureManager::Load("Explosion", "Sprites/Flame/Flame_f00.png");
-
 	if (File.is_open())
 	{
 		unsigned char TileType;
@@ -91,9 +123,12 @@ void GGame::Initialize()
 
 	}
 	File.close();
-	auto bman = new APlayer();
-	bman->SetLocation(96, 96);
-	bman->SetDirection(EDirection::EDown);
+	auto PlayerOne = new AFirstPlayer();
+	PlayerOne->SetLocation(96, 96);
+
+	auto PlayerTwo = new ASecondPlayer();
+	PlayerTwo->SetLocation(864, 864);
+	
 }
 
 void Quit(sf::Event &Event)

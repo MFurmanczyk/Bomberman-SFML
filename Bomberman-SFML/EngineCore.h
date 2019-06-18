@@ -9,3 +9,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+
+enum class EDirection
+{
+	EUp,
+	EDown,
+	ERight,
+	ELeft
+};

@@ -1,4 +1,5 @@
 #include "TextureManager.h"
+#include <exception>
 
 TTextureManager::~TTextureManager()
 {
@@ -10,22 +11,29 @@ TTextureManager::~TTextureManager()
 
 sf::Texture * TTextureManager::Load(const std::string & _TextureName, const std::string & _TexturePath)
 {
-	sf::Texture* Result = nullptr;
-	Result = TTextureManager::Get(_TextureName);
+	sf::Texture* Texture = nullptr;
+	Texture = TTextureManager::Get(_TextureName);
 
 	//if exists
-	if (Result)
+	if (Texture)
 	{
-		Result->loadFromFile(_TexturePath);
+		Texture->loadFromFile(_TexturePath);
 	}
 	else
 	{
-		Result = new sf::Texture();
-		Result->loadFromFile(_TexturePath);
-		TTextureManager::Instantiate().Textures[_TextureName] = Result;
+		Texture = new sf::Texture();
+		if (Texture->loadFromFile(_TexturePath))
+		{
+			TTextureManager::Instantiate().Textures[_TextureName] = Texture;
+		}
+		else
+		{
+			throw std::invalid_argument(_TexturePath);
+		}
+		
 	}
 
-	return Result;
+	return Texture;
 }
 
 bool TTextureManager::Unload(const std::string & _TextureName)

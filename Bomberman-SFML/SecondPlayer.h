@@ -5,18 +5,10 @@
 #include "Explosion.h"
 #include "TextureManager.h"
 
-enum class EDirection
-{
-	EUp,
-	EDown,
-	ERight,
-	ELeft
-};
-
-class APlayerController : public APawnController
+class ASecondPlayerController : public APawnController
 {
 public:
-	APlayerController() : APawnController() {};
+	ASecondPlayerController() : APawnController() {};
 	virtual void Update(const float& DeltaTime) override;
 
 private:
@@ -27,27 +19,31 @@ private:
 	void MoveUp(const float& DeltaTime);
 	void Plant();
 
+
 private:
 	AActor* Dynamite = nullptr;
-	AActor* Explsion[3][3] = { nullptr };
 	bool Setter = false;
-	float Velocity = 100.f;
+
 };
 
-class APlayer final : public APawn
+class ASecondPlayer final : public APawn
 {
 public:
-	APlayer();
+	ASecondPlayer();
+	void SetCollider();
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override;
 	inline virtual EDirection GetDirection() const { return this->Direction; };
 	inline virtual void SetDirection(EDirection _Direction) { this->Direction = _Direction; };
 	inline virtual sf::FloatRect GetCollider() const { return this->Collider; };
+
 	bool IsColliding();
+	bool IsOverlappingSpeedUp();
+	bool IsDead();
+	inline float GetVelocity() const { return this->Velocity; };
 
 private:
-	EDirection Direction;
+	EDirection Direction = EDirection::EUp;
 	sf::FloatRect Collider;
+	float Velocity = 100.f;
 };
-
-

@@ -11,7 +11,7 @@ public:
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override = 0;
 	inline virtual sf::FloatRect GetCollider() const = 0;
-
+	sf::Vector2u GetSize() const { return this->Sprite.getTexture()->getSize(); };
 };
 
 class ATileController : public APawnController
@@ -19,7 +19,6 @@ class ATileController : public APawnController
 public:
 	ATileController() = default;
 	virtual void Update(const float& DeltaTime) override {}; //TODO Controller for every type of tile
-
 };
 
 class AGroundTile : public ATile
@@ -58,6 +57,7 @@ public:
 		Sprite.setTexture(*(TTextureManager::Get("TileExplodable")));
 
 	};
+	virtual ~AExplodableTile();
 	virtual void Update(const float& DeltaTime) override 
 	{
 	};

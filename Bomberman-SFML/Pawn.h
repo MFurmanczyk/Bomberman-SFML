@@ -19,8 +19,6 @@ public:
 
 protected:
 	APawnController* Controller = nullptr;
-
-	float Velocity = 200.f;
 };
 
 class APawnController

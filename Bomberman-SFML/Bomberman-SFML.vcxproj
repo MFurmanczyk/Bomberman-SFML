@@ -123,7 +123,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Pawn.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="FirstPlayer.h" />
+    <ClInclude Include="SecondPlayer.h" />
+    <ClInclude Include="Speedup.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Tile.h" />
   </ItemGroup>
@@ -134,7 +136,9 @@
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Pawn.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="FirstPlayer.cpp" />
+    <ClCompile Include="SecondPlayer.cpp" />
+    <ClCompile Include="Speedup.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
