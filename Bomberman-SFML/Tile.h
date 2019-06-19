@@ -8,6 +8,7 @@ class ATile : public APawn
 {
 public: 
 	ATile();
+	virtual ~ATile() = default;
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override = 0;
 	inline virtual sf::FloatRect GetCollider() const = 0;

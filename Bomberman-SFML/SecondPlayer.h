@@ -30,6 +30,7 @@ class ASecondPlayer final : public APawn
 {
 public:
 	ASecondPlayer();
+	virtual ~ASecondPlayer() = default;
 	void SetCollider();
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override;

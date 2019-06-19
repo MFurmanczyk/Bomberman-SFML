@@ -66,6 +66,7 @@ void GGame::Run()
 
 void GGame::Initialize()
 {
+	//sciezki w pliku .txt
 	try
 	{
 		TTextureManager::Load("BombermanFront", "Sprites/Bomberman/Front/Bman_F_f00.png");

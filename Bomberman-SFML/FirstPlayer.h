@@ -30,6 +30,7 @@ class AFirstPlayer final : public APawn
 {
 public:
 	AFirstPlayer();
+	virtual ~AFirstPlayer() = default;
 	void SetCollider();
 	virtual void Draw() override;
 	virtual void Update(const float& DeltaTime) override;

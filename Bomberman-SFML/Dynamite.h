@@ -7,7 +7,7 @@ class ADynamite : public APawn
 {
 public:
 	ADynamite();
-	~ADynamite() = default;
+	virtual ~ADynamite() = default;
 
 	virtual void Update(const float & DeltaTime) override;
 	virtual void Draw() override;
